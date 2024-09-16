@@ -19,10 +19,15 @@ jobs:
         with:
           java-version: 17
   
-      - name: Decode google-services.json
+      - name: Decode google-nmedia-b3264-firebase-adminsdk-h05v6-955e8d7304.json
         env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
-        run: echo $FIREBASE_SECRET > ./app/google-services.json
+        run: echo $FIREBASE_SECRET > ./app/google-nmedia-b3264-firebase-adminsdk-h05v6-955e8d7304.json
+
+      - name: Decode constans.kt
+        env:
+          CONSTANS_SECRET: ${{ secrets.CONSTANS_SERCET }}
+        run: echo $CONSTANS_SERCET > ./app/src/main/kotlin/ru/netology/pusher/constans.kt
 
       - name: Build
         run: |
